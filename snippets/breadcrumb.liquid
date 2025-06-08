@@ -1,17 +1,30 @@
 <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-  <ol>
-    <li>
-      <a href="/" title="Home">Home</a>
-    </li>
-    {% if collection %}
-      <li>
-        <a href="{{ collection.url }}">{{ collection.title }}</a>
+  <div class="page-width">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item">
+        <a href="/" class="breadcrumb__link" title="Home">Home</a>
       </li>
-    {% endif %}
-    <li>
-      <span>{{ product.title }}</span>
-    </li>
-  </ol>
+      
+      {% if template contains 'page' and page %}
+        <li class="breadcrumb__item">
+          <span class="breadcrumb__link">{{ page.title }}</span>
+        </li>
+      {% elsif template contains 'collection' and collection %}
+        <li class="breadcrumb__item">
+          <span class="breadcrumb__link">{{ collection.title }}</span>
+        </li>
+      {% elsif template contains 'product' and product %}
+        {% if collection %}
+          <li class="breadcrumb__item">
+            <a href="{{ collection.url }}" class="breadcrumb__link">{{ collection.title }}</a>
+          </li>
+        {% endif %}
+        <li class="breadcrumb__item">
+          <span class="breadcrumb__link">{{ product.title }}</span>
+        </li>
+      {% endif %}
+    </ol>
+  </div>
 </nav>
 
 <script type="application/ld+json">
@@ -23,17 +36,36 @@
     "position": 1,
     "name": "Home",
     "item": "{{ shop.url }}"
-  },{% if collection %}
+  }{% if template contains 'page' and page %},
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "{{ page.title }}",
+    "item": "{{ shop.url }}{{ page.url }}"
+  }{% elsif template contains 'collection' and collection %},
+  {
     "@type": "ListItem",
     "position": 2,
     "name": "{{ collection.title }}",
     "item": "{{ shop.url }}{{ collection.url }}"
-  },{% endif %}
+  }{% elsif template contains 'product' and product %}{% if collection %},
   {
     "@type": "ListItem",
-    "position": {% if collection %}3{% else %}2{% endif %},
+    "position": 2,
+    "name": "{{ collection.title }}",
+    "item": "{{ shop.url }}{{ collection.url }}"
+  },
+  {
+    "@type": "ListItem",
+    "position": 3,
     "name": "{{ product.title }}",
     "item": "{{ shop.url }}{{ product.url }}"
-  }]
+  }{% else %},
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "{{ product.title }}",
+    "item": "{{ shop.url }}{{ product.url }}"
+  }{% endif %}{% endif %}]
 }
 </script> 

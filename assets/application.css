@@ -9,11 +9,39 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading-family);
 }
 
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
 /* Layout */
 .page-width {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Section Headers */
+.section-header {
+  margin-bottom: 50px;
+  padding-top: 60px;
+}
+
+.section-header h1 {
+  position: relative;
+  color: #00214d;
+  margin-bottom: 0;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.section-header h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #00214d;
+  margin: 20px auto 0;
 }
 
 .grid {
@@ -183,6 +211,47 @@ h1, h2, h3, h4, h5, h6 {
   outline-offset: 3px;
   box-shadow: 0 0 0 4px var(--color-background), 0 0 0 6px var(--color-accent);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-width {
+    padding: 0 15px;
+  }
+  
+  .section-header {
+    padding-top: 40px;
+    margin-bottom: 30px;
+  }
+  
+  .section-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .rte h2 {
+    font-size: 1.75rem;
+    margin-top: 30px;
+  }
+  
+  .rte h3 {
+    font-size: 1.35rem;
+    margin-top: 25px;
+  }
+  
+  .page-cta {
+    padding: 30px 20px;
+    margin-top: 40px;
+  }
+  
+  .page-cta h3 {
+    font-size: 1.5rem;
+  }
+  
+  .breadcrumb {
+    padding: 10px 0;
+  }
+  
+  .breadcrumb__list {
+    font-size: 0.9rem;
 
 /* Contact Page Styles */
 .contact-page {

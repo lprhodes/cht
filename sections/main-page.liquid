@@ -15,8 +15,24 @@
   {% endif %}
   
   <div class="page-content">
-    <div class="rte">
-      {{ page.content }}
+    <div class="rte{% if section.settings.content_alignment == 'center' %} text-center{% endif %}">
+      {% if page.handle == 'about-us' and page.content == blank and section.settings.use_default_about_content %}
+        <!-- Default About Us content for CHT Solutions -->
+        <h2>WHO IS CHT SOLUTIONS?</h2>
+        <p>CHT Solutions is based in Sydney and was founded in 2009 after discovering a need in the Australian market for affordable home theatre accessories, over time expanding to offer a full range of consumer electronics and accessories.</p>
+        
+        <h2>HOW CAN WE HELP?</h2>
+        <p>Our staff pride themselves on customer satisfaction and will endeavor to help provide quality products at great prices while maintaining our great customer service. We really appreciate all customer feedback and suggestions, so be sure to let us know how you feel via our contact us page or by completing product reviews so other customers can hear about your experiences with us.</p>
+        
+        <h2>DESIGN SERVICES</h2>
+        <p>Looking for someone to design your new home theatre or multiroom audio system? We have experienced staff who are more than happy to help design a system to suit your needs and budget.</p>
+        
+        <p style="text-align: center; margin-top: 40px; font-size: 1.2rem; color: #00214d; font-weight: 600;">
+          TO ALL OF YOU, FROM ALL OF US AT CHT SOLUTIONS - THANK YOU FOR YOUR SUPPORT.
+        </p>
+      {% else %}
+        {{ page.content }}
+      {% endif %}
     </div>
     
     {% if section.settings.show_contact_cta %}
@@ -38,43 +54,77 @@
     {
       "type": "text",
       "id": "page_subtitle",
-      "label": "Page subtitle"
+      "label": "Page subtitle",
+      "info": "Optional subtitle that appears below the page title"
     },
     {
       "type": "checkbox",
       "id": "show_featured_image",
       "label": "Show featured image",
-      "default": false
+      "default": false,
+      "info": "Display the page's featured image at the top"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
     },
     {
       "type": "checkbox",
       "id": "show_contact_cta",
       "label": "Show contact call-to-action",
-      "default": false
+      "default": false,
+      "info": "Display a contact CTA section at the bottom of the page"
     },
     {
       "type": "text",
       "id": "cta_title",
       "label": "CTA title",
-      "default": "Get in Touch"
+      "default": "Get in Touch",
+      "info": "Title for the call-to-action section"
     },
     {
       "type": "textarea",
       "id": "cta_text",
       "label": "CTA text",
-      "default": "Have questions? We'd love to hear from you."
+      "default": "Have questions? We'd love to hear from you.",
+      "info": "Description text for the call-to-action section"
     },
     {
       "type": "url",
       "id": "cta_link",
       "label": "CTA link",
-      "default": "/pages/contact"
+      "default": "/pages/contact",
+      "info": "Where the CTA button should link to"
     },
     {
       "type": "text",
       "id": "cta_button_text",
       "label": "CTA button text",
-      "default": "Contact Us"
+      "default": "Contact Us",
+      "info": "Text displayed on the CTA button"
+    },
+    {
+      "type": "header",
+      "content": "About Page Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_default_about_content",
+      "label": "Use default About content",
+      "default": true,
+      "info": "When enabled, displays pre-written About content if no page content is provided"
     }
   ]
 }
