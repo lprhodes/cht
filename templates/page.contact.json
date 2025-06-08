@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-contact",
+      "settings": {
+        "page_subtitle": "Expert audio consultation and support for all your hi-fi needs",
+        "form_title": "Get Expert Audio Advice",
+        "form_description": "Whether you're looking for a complete system or have technical questions, our audio specialists are here to help you achieve the perfect sound.",
+        "submit_button_text": "Send Message",
+        "success_message": "Thank you for contacting CHT Solutions. One of our audio experts will get back to you within 24 hours.",
+        "info_title": "Visit Our Audio Showroom",
+        "show_address": true,
+        "address_title": "Visit Our Store",
+        "address": "123 Audio Street\nSuite 456\nNew York, NY 10001",
+        "show_phone": true,
+        "phone_title": "Call Our Experts",
+        "phone": "(555) 123-HIFI",
+        "show_email": true,
+        "email_title": "Email Us",
+        "email": "info@chtsolutions.com",
+        "show_hours": true,
+        "hours_title": "Store Hours",
+        "hours": "Monday - Friday: 10am - 7pm\nSaturday: 10am - 6pm\nSunday: 12pm - 5pm",
+        "show_expertise": true,
+        "expertise_title": "Our Expertise",
+        "expertise_1": "High-End Hi-Fi Systems",
+        "expertise_2": "Home Theatre Design & Installation",
+        "expertise_3": "Vintage Audio Restoration",
+        "expertise_4": "Custom Acoustics Solutions"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
