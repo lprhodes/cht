@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Acoustic Theme Preview</title>
+    <title>Custom Home Theatre Solutions Australia - CHT Solutions</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <style>
@@ -63,8 +63,12 @@
             width: 33.33333%;
         }
         
-        .medium-up--one-quarter-th {
+        .medium-up--one-quarter {
             width: 25%;
+        }
+        
+        .medium-up--one-half {
+            width: 50%;
         }
         
         .text-center {
@@ -145,6 +149,35 @@
             opacity: 0.95;
         }
 
+        /* Category Grid */
+        .category-grid {
+            margin-bottom: 80px;
+        }
+
+        .category-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px solid #e8e8e8;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #2c2c2c;
+            display: block;
+        }
+
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            color: #00214d;
+        }
+
+        .category-item h3 {
+            color: #00214d;
+            font-size: 1.4rem;
+            margin-bottom: 0;
+        }
+
         /* Section Headers */
         .section-header {
             margin-bottom: 50px;
@@ -165,44 +198,6 @@
             margin: 20px auto 0;
         }
 
-        /* Collection Grid */
-        .collection-grid-item {
-            text-decoration: none;
-            color: #2c2c2c;
-            display: block;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            background: #fff;
-        }
-
-        .collection-grid-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-        }
-
-        .collection-grid-item__image-wrapper {
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-bottom: 1px solid #e8e8e8;
-        }
-
-        .collection-grid-item__title-wrapper {
-            padding: 25px;
-            text-align: center;
-        }
-
-        .collection-grid-item__title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #00214d;
-            margin: 0;
-        }
-
         /* Product Cards */
         .product-card {
             border-radius: 15px;
@@ -212,6 +207,9 @@
             background: #fff;
             text-align: center;
             position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card:hover {
@@ -223,6 +221,7 @@
             text-decoration: none;
             color: inherit;
             display: block;
+            flex-grow: 1;
         }
 
         .product-card__image-wrapper {
@@ -236,6 +235,9 @@
 
         .product-card__info {
             padding: 25px 20px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card__name {
@@ -251,6 +253,27 @@
             font-weight: 700;
             color: #00214d;
             margin-bottom: 20px;
+            margin-top: auto;
+        }
+
+        .product-card__sale-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-card__original-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-right: 10px;
         }
 
         /* Buttons */
@@ -279,6 +302,31 @@
         .product-card .btn {
             width: calc(100% - 40px);
             margin: 0 20px 20px;
+        }
+
+        /* About Section */
+        .about-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0;
+            margin: 80px 0;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            color: #00214d;
+            margin-bottom: 30px;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #555;
         }
 
         /* Footer */
@@ -373,7 +421,8 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .medium-up--one-third,
-            .medium-up--one-quarter-th {
+            .medium-up--one-quarter,
+            .medium-up--one-half {
                 width: 100%;
             }
             
@@ -411,7 +460,7 @@
     <div class="page-width">
         <div class="header-bar">
             <div class="header-bar__left">
-                <a href="#" class="header-bar__logo">Acoustic</a>
+                <a href="#" class="header-bar__logo">CHT Solutions</a>
             </div>
             <div class="header-bar__center">
                 <nav class="header-nav">
@@ -433,63 +482,201 @@
 <main role="main">
     <div class="hero-wrapper">
         <div class="hero-content">
-            <h1>The Cinema, Reimagined.</h1>
-            <p>Pure Analog Sound.</p>
+            <h1>Custom Home Theatre Solutions Australia</h1>
+            <p>Your trusted partner for premium audio solutions since 2009</p>
             <a href="#" class="btn">Shop Now</a>
         </div>
     </div>
-    
-    <div class="page-width" style="margin-top: 50px;">
-      <div class="section-header text-center">
-        <h2>Featured collections</h2>
-      </div>
-      <div class="grid grid--uniform grid--collections">
-          <div class="grid__item medium-up--one-third">
-            <a href="#" class="collection-grid-item">
-              <div class="collection-grid-item__image-wrapper">
-                 <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
-              </div>
-              <div class="collection-grid-item__title-wrapper">
-                <h3 class="collection-grid-item__title">New Arrivals</h3>
-              </div>
-            </a>
-          </div>
-          <div class="grid__item medium-up--one-third">
-            <a href="#" class="collection-grid-item">
-              <div class="collection-grid-item__image-wrapper">
-                <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
-              </div>
-              <div class="collection-grid-item__title-wrapper">
-                <h3 class="collection-grid-item__title">Best Sellers</h3>
-              </div>
-            </a>
-          </div>
-          <div class="grid__item medium-up--one-third">
-            <a href="#" class="collection-grid-item">
-              <div class="collection-grid-item__image-wrapper">
-                <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
-              </div>
-              <div class="collection-grid-item__title-wrapper">
-                <h3 class="collection-grid-item__title">Sale</h3>
-              </div>
-            </a>
-          </div>
-      </div>
-    </div>
 
-    <div class="page-width" style="margin-top: 50px;">
+    <!-- Product Categories -->
+    <div class="page-width category-grid">
+        <div class="section-header text-center">
+            <h2>Shop by Category</h2>
+        </div>
+        <div class="grid">
+            <div class="grid__item medium-up--one-third">
+                <a href="#" class="category-item">
+                    <h3>AV Receivers</h3>
+                </a>
+            </div>
+            <div class="grid__item medium-up--one-third">
+                <a href="#" class="category-item">
+                    <h3>Speakers</h3>
+                </a>
+            </div>
+            <div class="grid__item medium-up--one-third">
+                <a href="#" class="category-item">
+                    <h3>Projectors</h3>
+                </a>
+            </div>
+            <div class="grid__item medium-up--one-third">
+                <a href="#" class="category-item">
+                    <h3>Integrated Amplifiers</h3>
+                </a>
+            </div>
+            <div class="grid__item medium-up--one-third">
+                <a href="#" class="category-item">
+                    <h3>Subwoofers</h3>
+                </a>
+            </div>
+            <div class="grid__item medium-up--one-third">
+                <a href="#" class="category-item">
+                    <h3>Home Theatre Seating</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Trending Products -->
+    <div class="page-width">
       <div class="section-header text-center">
-        <h2>Featured product</h2>
+        <h2>Trending Products</h2>
       </div>
       <div class="grid grid--uniform grid--view-items">
-          <div class="grid__item medium-up--one-quarter-th">
+          <div class="grid__item medium-up--one-quarter">
+            <div class="product-card">
+              <div class="product-card__sale-badge">Save 20%</div>
+              <a href="#" class="product-card__link">
+                <div class="product-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__name">DENON AVC-X3800H 9.4CH 8K AV RECEIVER</div>
+                  <div class="product-card__price">
+                    <span class="product-card__original-price">$2,499.00</span>
+                    $1,999.00
+                  </div>
+                </div>
+              </a>
+              <form>
+                <button type="submit" class="btn">Add to Cart</button>
+              </form>
+            </div>
+          </div>
+          <div class="grid__item medium-up--one-quarter">
+            <div class="product-card">
+              <div class="product-card__sale-badge">Save 20%</div>
+              <a href="#" class="product-card__link">
+                <div class="product-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__name">BOWERS & WILKINS PX8 LUXURY NOISE CANCELLING HEADPHONES</div>
+                  <div class="product-card__price">
+                    <span class="product-card__original-price">$1,149.00</span>
+                    $919.00
+                  </div>
+                </div>
+              </a>
+              <form>
+                <button type="submit" class="btn">Add to Cart</button>
+              </form>
+            </div>
+          </div>
+          <div class="grid__item medium-up--one-quarter">
             <div class="product-card">
               <a href="#" class="product-card__link">
                 <div class="product-card__image-wrapper">
                   <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
                 </div>
                 <div class="product-card__info">
-                  <div class="product-card__name">Tierium 14AWG Speaker Cable</div>
+                  <div class="product-card__name">MINIDSP UMIK-1 CALIBRATION MICROPHONE USB-C</div>
+                  <div class="product-card__price">$199.00</div>
+                </div>
+              </a>
+              <form>
+                <button type="submit" class="btn">Add to Cart</button>
+              </form>
+            </div>
+          </div>
+          <div class="grid__item medium-up--one-quarter">
+            <div class="product-card">
+              <div class="product-card__sale-badge">Save 30%</div>
+              <a href="#" class="product-card__link">
+                <div class="product-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__name">POLK ES12 SIGNATURE ELITE 12" SUBWOOFER</div>
+                  <div class="product-card__price">
+                    <span class="product-card__original-price">$1,449.00</span>
+                    $1,014.00
+                  </div>
+                </div>
+              </a>
+              <form>
+                <button type="submit" class="btn">Add to Cart</button>
+              </form>
+            </div>
+          </div>
+          <div class="grid__item medium-up--one-quarter">
+            <div class="product-card">
+              <div class="product-card__sale-badge">Save 30%</div>
+              <a href="#" class="product-card__link">
+                <div class="product-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__name">POLK SIGNATURE ELITE ES20 BOOKSHELF SPEAKERS PAIR</div>
+                  <div class="product-card__price">
+                    <span class="product-card__original-price">$849.00</span>
+                    $594.00
+                  </div>
+                </div>
+              </a>
+              <form>
+                <button type="submit" class="btn">Add to Cart</button>
+              </form>
+            </div>
+          </div>
+          <div class="grid__item medium-up--one-quarter">
+            <div class="product-card">
+              <div class="product-card__sale-badge">Save 20%</div>
+              <a href="#" class="product-card__link">
+                <div class="product-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__name">MARANTZ CD6007 CD PLAYER</div>
+                  <div class="product-card__price">
+                    <span class="product-card__original-price">$1,000.00</span>
+                    $800.00
+                  </div>
+                </div>
+              </a>
+              <form>
+                <button type="submit" class="btn">Add to Cart</button>
+              </form>
+            </div>
+          </div>
+          <div class="grid__item medium-up--one-quarter">
+            <div class="product-card">
+              <div class="product-card__sale-badge">Save 30%</div>
+              <a href="#" class="product-card__link">
+                <div class="product-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__name">POLK AUDIO RESERVE R200 BOOKSHELF SPEAKERS</div>
+                  <div class="product-card__price">
+                    <span class="product-card__original-price">$1,299.00</span>
+                    $909.00
+                  </div>
+                </div>
+              </a>
+              <form>
+                <button type="submit" class="btn">Add to Cart</button>
+              </form>
+            </div>
+          </div>
+          <div class="grid__item medium-up--one-quarter">
+            <div class="product-card">
+              <a href="#" class="product-card__link">
+                <div class="product-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__name">TIERIUM 14AWG SPEAKER CABLE PER METRE</div>
                   <div class="product-card__price">$7.00</div>
                 </div>
               </a>
@@ -498,55 +685,19 @@
               </form>
             </div>
           </div>
-          <div class="grid__item medium-up--one-quarter-th">
-            <div class="product-card">
-              <a href="#" class="product-card__link">
-                <div class="product-card__image-wrapper">
-                  <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
-                </div>
-                <div class="product-card__info">
-                  <div class="product-card__name">Premium Amplifier</div>
-                  <div class="product-card__price">$1,299.99</div>
-                </div>
-              </a>
-              <form>
-                <button type="submit" class="btn">Add to Cart</button>
-              </form>
-            </div>
-          </div>
-          <div class="grid__item medium-up--one-quarter-th">
-            <div class="product-card">
-              <a href="#" class="product-card__link">
-                <div class="product-card__image-wrapper">
-                  <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
-                </div>
-                <div class="product-card__info">
-                  <div class="product-card__name">Bookshelf Speakers (Pair)</div>
-                  <div class="product-card__price">$499.00</div>
-                </div>
-              </a>
-              <form>
-                <button type="submit" class="btn">Add to Cart</button>
-              </form>
-            </div>
-          </div>
-          <div class="grid__item medium-up--one-quarter-th">
-            <div class="product-card">
-              <a href="#" class="product-card__link">
-                <div class="product-card__image-wrapper">
-                  <svg class="placeholder-svg" viewBox="0 0 288 288"><path d="M288,144A144,144,0,1,1,144,0,144,144,0,0,1,288,144Z"></path></svg>
-                </div>
-                <div class="product-card__info">
-                  <div class="product-card__name">High-End Turntable</div>
-                  <div class="product-card__price">$850.00</div>
-                </div>
-              </a>
-              <form>
-                <button type="submit" class="btn">Add to Cart</button>
-              </form>
-            </div>
-          </div>
       </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <div class="page-width">
+            <div class="about-content">
+                <h2>CHT SOLUTIONS - YOUR HOME THEATRE & HIFI EXPERTS</h2>
+                <p>CHT Solutions is your one-stop shop for the highest quality home theatre and HiFi components. Whether you are creating your own custom home theatre and are in the market for a home theatre package, or are simply wanting to upgrade your speakers, you have come to the right place.</p>
+                <p>We have been providing the best home theatre and HiFi products Australia-wide since 2009.</p>
+                <a href="about-preview.html" class="btn">Read More</a>
+            </div>
+        </div>
     </div>
 </main>
 
@@ -559,28 +710,32 @@
               <li><a href="about-preview.html">About Us</a></li>
               <li><a href="#">Contact</a></li>
               <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Privacy Policy</a></li>
           </ul>
         </div>
       <div class="grid__item medium-up--one-third">
-        <h4 class="site-footer__title">Contact</h4>
+        <h4 class="site-footer__title">In Store Demo & Product Pickup</h4>
         <div class="site-footer__contact">
-          <p>123 Audio Lane, Sydney, NSW</p>
-          <p>contact@acoustic.com</p>
-          <p>(02) 1234 5678</p>
+          <p>Unit 12, 538 Gardeners Road<br>Alexandria, NSW</p>
+          <p>Mon - Fri: 9:00am - 5:00pm<br>Sat - Sun: Via Appointment</p>
+          <p>1800 100 998</p>
         </div>
       </div>
       <div class="grid__item medium-up--one-third">
-        <h4 class="site-footer__title">Newsletter</h4>
+        <h4 class="site-footer__title">Sign Up and Save</h4>
+        <p style="color: #ccc; margin-bottom: 15px;">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
           <div class="input-group">
-            <input type="email" placeholder="Email address" class="input-group-field" aria-label="Email address">
+            <input type="email" placeholder="Enter your email" class="input-group-field" aria-label="Email address">
             <span class="input-group-btn">
               <button type="submit" class="btn">Subscribe</button>
             </span>
           </div>
       </div>
     </div>
-    <div class="site-footer__bottom" style="text-align: center; margin-top: 20px;">
-      <small>&copy; 2024, Acoustic</small>
+    <div class="site-footer__bottom">
+      <small>&copy; 2024, CHT Solutions</small>
     </div>
   </div>
 </footer>
