@@ -1,0 +1,44 @@
+<div data-section-id="{{ section.id }}" data-section-type="header-section">
+  <div class="header-bar">
+    <div class="header-bar__left">
+      {% if section.settings.logo %}
+        <a href="/" class="header-bar__logo">
+          <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ shop.name }}">
+        </a>
+      {% else %}
+        <a href="/" class="header-bar__logo">{{ shop.name }}</a>
+      {% endif %}
+    </div>
+    <div class="header-bar__center">
+      <nav class="header-nav">
+        {% for link in linklists[section.settings.main_menu].links %}
+          <a href="{{ link.url }}" class="header-nav__link">{{ link.title }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+    <div class="header-bar__right">
+      <a href="/search" class="header-bar__icon">Search</a>
+      <a href="/account" class="header-bar__icon">Account</a>
+      <a href="/cart" class="header-bar__icon">Cart</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "label": "Main menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %} 

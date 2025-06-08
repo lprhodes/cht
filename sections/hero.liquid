@@ -1,0 +1,61 @@
+<div class="hero-wrapper">
+  {% if section.settings.hero_video != blank %}
+    <video src="{{ section.settings.hero_video }}" autoplay muted loop playsinline></video>
+  {% else %}
+    <img src="{{ section.settings.hero_image | img_url: 'master' }}" alt="{{ section.settings.hero_image.alt }}">
+  {% endif %}
+
+  <div class="hero-content">
+    <h1>{{ section.settings.hero_title }}</h1>
+    <p>{{ section.settings.hero_subtitle }}</p>
+    <a href="{{ section.settings.hero_button_link }}" class="btn">{{ section.settings.hero_button_text }}</a>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "hero_video",
+      "label": "Hero Video URL",
+      "info": "Enter a URL for a video from Shopify files"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "Hero Title"
+    },
+    {
+      "type": "text",
+      "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "Hero Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "hero_button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "hero_button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %} 

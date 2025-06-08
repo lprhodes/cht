@@ -1,0 +1,67 @@
+<div class="page-width">
+  <div class="section-header text-center">
+    <h2>{{ section.settings.title | escape }}</h2>
+  </div>
+  <div class="grid grid--uniform">
+    {% for block in section.blocks %}
+      <div class="grid__item medium-up--one-{{ section.blocks.size }}-th text-center">
+        {% if block.settings.icon != blank %}
+          <div class="value-prop__icon">
+            <img src="{{ block.settings.icon | img_url: '100x100' }}" alt="{{ block.settings.title | escape }}">
+          </div>
+        {% endif %}
+        <h3>{{ block.settings.title | escape }}</h3>
+        <p>{{ block.settings.text | escape }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Value Propositions",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Why Choose Us"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "proposition",
+      "name": "Proposition",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Proposition"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Tell customers about a key feature of your store."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Value Propositions",
+      "blocks": [
+        { "type": "proposition" },
+        { "type": "proposition" },
+        { "type": "proposition" }
+      ]
+    }
+  ]
+}
+{% endschema %} 

@@ -1,0 +1,63 @@
+<div class="page-width">
+  <div class="section-header text-center">
+    <h2>{{ section.settings.title | escape }}</h2>
+  </div>
+  <div class="grid">
+    {% for block in section.blocks %}
+      <div class="grid__item medium-up--one-third">
+        <div class="testimonial">
+          <div class="testimonial__quote">
+            <blockquote>{{ block.settings.quote | escape }}</blockquote>
+          </div>
+          <div class="testimonial__author">
+            <p>&mdash; {{ block.settings.author | escape }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "What our customers are saying"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Quote",
+          "default": "<p>Add a customer quote here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Customer Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        { "type": "testimonial" },
+        { "type": "testimonial" },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %} 

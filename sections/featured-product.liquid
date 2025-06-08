@@ -1,0 +1,69 @@
+<div class="page-width">
+  <div class="section-header text-center">
+    <h2>{{ section.settings.title | escape }}</h2>
+  </div>
+  <div class="grid grid--uniform grid--view-items">
+    {%- assign collection = collections[section.settings.collection] -%}
+    {% for product in collection.products limit: section.settings.rows | times: section.settings.grid %}
+      <div class="grid__item medium-up--one-{{ section.settings.grid }}-th">
+        {% include 'product-card', product: product %}
+      </div>
+    {% else %}
+      {% for i in (1..section.settings.grid) %}
+        <div class="grid__item medium-up--one-{{ section.settings.grid }}-th">
+          <div class="product-card">
+            <div class="product-card__image-wrapper">
+              {{ 'product-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+            <div class="product-card__info">
+              <div class="product-card__name">Product Name</div>
+              <div class="product-card__price">$99.99</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Product",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured product"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": "Products per row",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": "Rows",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Product"
+    }
+  ]
+}
+{% endschema %} 

@@ -1,0 +1,86 @@
+<div class="page-width">
+  <div class="section-header text-center">
+    <h2>{{ section.settings.title | escape }}</h2>
+  </div>
+  <div class="grid grid--uniform grid--collections">
+    {% for i in (1..section.settings.grid) %}
+      {%- assign collection_setting = 'collection_' | append: i -%}
+      {%- assign collection = collections[section.settings[collection_setting]] -%}
+      <div class="grid__item medium-up--one-{{ section.settings.grid }}-th">
+        <a href="{{ collection.url | default: '#' }}" class="collection-grid-item">
+          <div class="collection-grid-item__image-wrapper">
+            {% if collection.image %}
+              <img class="collection-grid-item__image" src="{{ collection.image | img_url: '480x480' }}" alt="{{ collection.image.alt | escape }}">
+            {% else %}
+              {%- assign placeholder_image = 'collection-' | append: i -%}
+              {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+          <div class="collection-grid-item__title-wrapper">
+            <h3 class="collection-grid-item__title">{{ collection.title | default: 'Collection' }}</h3>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured collections"
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": "Collections per row",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Collections"
+    },
+    {
+      "type": "collection",
+      "id": "collection_1",
+      "label": "Collection 1",
+      "default": "new-arrivals"
+    },
+    {
+      "type": "collection",
+      "id": "collection_2",
+      "label": "Collection 2",
+      "default": "best-sellers"
+    },
+    {
+      "type": "collection",
+      "id": "collection_3",
+      "label": "Collection 3",
+      "default": "sale"
+    },
+    {
+      "type": "collection",
+      "id": "collection_4",
+      "label": "Collection 4"
+    },
+    {
+      "type": "collection",
+      "id": "collection_5",
+      "label": "Collection 5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collections"
+    }
+  ]
+}
+{% endschema %} 

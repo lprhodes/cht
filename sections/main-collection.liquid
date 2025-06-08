@@ -1,0 +1,77 @@
+{%- liquid
+  assign products_per_page = section.settings.products_per_page
+  paginate collection.products by products_per_page
+-%}
+
+<div data-section-id="{{ section.id }}" data-section-type="collection-template">
+  {% include 'breadcrumb' %}
+  <div class="page-width">
+    <div class="section-header text-center">
+      <h1>{{ collection.title }}</h1>
+      <div class="rte">
+        {{ collection.description }}
+      </div>
+    </div>
+    <div class="grid">
+      <div class="grid__item medium-up--three-quarters">
+        <div class="grid grid--uniform">
+          {% for product in collection.products %}
+            <div class="grid__item medium-up--one-third">
+              {% include 'product-card', product: product %}
+            </div>
+          {% else %}
+            <div class="grid__item">
+              <p>No products found in this collection.</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {%- if paginate.pages > 1 -%}
+      <div class="pagination">
+        {{ paginate | default_pagination | replace: '&laquo; Previous', 'Previous' | replace: 'Next &raquo;', 'Next' }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- assign paginate = nil -%}
+
+{% schema %}
+{
+  "name": "Collection pages",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 2,
+      "max": 24,
+      "step": 2,
+      "label": "Products per page",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        { "value": "adapt", "label": "Adapt to image"},
+        { "value": "portrait", "label": "Portrait" },
+        { "value": "square", "label": "Square" }
+      ],
+      "label": "Image ratio"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "Show vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "Enable sorting"
+    }
+  ]
+}
+{% endschema %} 

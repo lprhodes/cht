@@ -1,0 +1,6 @@
+{%- if variant.price < variant.compare_at_price -%}
+  <span class="product-price--sale">{{ variant.price | money }}</span>
+  <s class="product-price--regular">{{ variant.compare_at_price | money }}</s>
+{%- else -%}
+  <span class="product-price--regular">{{ variant.price | money }}</span>
+{%- endif -%} 

@@ -1,0 +1,233 @@
+# Products On Sale | CHT Solutions
+
+**Source URL:** https://customht.com.au/collections/sale
+
+## Content
+
+HOME / PRODUCTS ON SALE
+BRAND
+PRODUCT TYPE
+HDMI CABLE SPEED
+PRICE
+AVAILABILITY
+COLOUR
+PRODUCTS ON SALE
+ Filter
+171 products
+SORT
+Sort
+Featured
+Best selling
+Alphabetically, A-Z
+Alphabetically, Z-A
+Price, low to high
+Price, high to low
+Date, old to new
+Date, new to old
+Sale
+DENON AVR-X2800H 7.2CH 8K AV RECEIVER
+Regular price
+$1,699.00 
+Sale price
+$1,359.00 Save 20%
+Sale
+DENON AVC-X3800H 9.4CH 8K AV RECEIVER
+Regular price
+$2,499.00 
+Sale price
+$1,999.00 Save 20%
+Sale
+DENON AVC-X6800H AV RECEIVER 11.4CH
+Regular price
+$6,499.00 
+Sale price
+$5,199.00 Save 20%
+Sale
+MARANTZ CINEMA 70S SLIMLINE 7.2CH AV RECEIVER
+Regular price
+$1,800.00 
+Sale price
+$1,440.00 Save 20%
+Sale
+MARANTZ CINEMA 60 PREMIUM 7.2CH AV RECEIVER
+Regular price
+$2,500.00 
+Sale price
+from $2,000.00 Save 20%
+Sale
+MARANTZ MODEL M1 COMPACT STREAMING AMPLIFIER
+Regular price
+$1,600.00 
+Sale price
+$1,280.00 Save 20%
+Sale
+DENON HOME AMP HEOS STREAMING AMPLIFIER
+Regular price
+$1,199.00 
+Sale price
+$939.00 Save 22%
+Sale
+POLK AUDIO RESERVE R900 HEIGHT MODULE SPEAKERS FOR DOLBY ATMOS
+Regular price
+$999.00 
+Sale price
+$699.00 Save 30%
+Sale
+POLK AUDIO RESERVE R200 BOOKSHELF SPEAKERS
+Regular price
+$1,299.00 
+Sale price
+$909.00 Save 30%
+Sale
+MARANTZ PM6007 STEREO INTEGRATED AMPLIFIER
+Regular price
+$1,100.00 
+Sale price
+$880.00 Save 20%
+Sale
+SVS PRIME TOWER 5.1CH SPEAKER PACKAGE WITH PB1000 PRO
+Regular price
+$6,246.00 
+Sale price
+from $5,300.00 Save 15%
+Sale
+MARANTZ CD6007 CD PLAYER
+Regular price
+$1,000.00 
+Sale price
+$800.00 Save 20%
+Sale
+POLK AUDIO RESERVE R350 CENTRE SPEAKER
+Regular price
+$999.00 
+Sale price
+$699.00 Save 30%
+Sale
+POLK AUDIO RESERVE R400 CENTRE SPEAKER
+Regular price
+$1,099.00 
+Sale price
+from $769.00 Save 30%
+Sale
+POLK SIGNATURE ELITE ES20 BOOKSHELF SPEAKERS PAIR
+Regular price
+$849.00 
+Sale price
+$594.00 Save 30%
+Sale
+MARANTZ CINEMA 50 PREMIUM 9.4CH AV RECEIVER
+Regular price
+$3,500.00 
+Sale price
+from $2,800.00 Save 20%
+Sale
+DENON AVC-X4800H 9.4CH 8K AV RECEIVER
+Regular price
+$4,299.00 
+Sale price
+$3,439.00 Save 20%
+Sale
+POLK ES12 SIGNATURE ELITE 12" SUBWOOFER
+Regular price
+$1,449.00 
+Sale price
+$1,014.00 Save 30%
+Sale
+POLK ES10 SIGNATURE ELITE 10" SUBWOOFER
+Regular price
+$1,249.00 
+Sale price
+$874.00 Save 30%
+Sale
+ENCEL 6.5" IN-CEILING STEREO SPEAKER - STEREO / MONO SWITCHABLE - 100W
+Regular price
+$269.00 
+Sale price
+$129.00 Save 52%
+Sale
+AUDIOQUEST ROCKET 11 BI-WIRE SPEAKER CABLE PAIR
+Regular price
+$625.00 
+Sale price
+from $435.00 Save 30%
+Sale
+ROTEL MICHI X5 STEREO INTEGRATED AMPLIFIER (SERIES 1) - EX-DEMO
+Regular price
+$9,999.00 
+Sale price
+$6,999.00 Save 30%
+Sale
+ORTOFON HI-FI 6NX-MPR 30 MINI-JACK 3.5MM CABLE
+Regular price
+$169.00 
+Sale price
+$39.00 Save 77%
+Sale
+POLK AUDIO RESERVE R700 FLOORSTANDING SPEAKERS
+Regular price
+$3,799.00 
+Sale price
+$2,659.00 Save 30%
+Sale
+DENON AVC-A1H 15.4CH AV RECEIVER - SILVER OPEN BOX
+Regular price
+$12,499.00 
+Sale price
+$9,999.00 Save 20%
+Sale
+ROTEL DIAMOND SERIES DT-6000 CD PLAYER DAC - EX DEMO
+Regular price
+$3,499.00 
+Sale price
+$1,399.00 Save 60%
+Sale
+EXPOSURE 3510 INTEGRATED AMPLIFIER - EX-DEMO
+Regular price
+$4,899.00 
+Sale price
+$3,429.00 Save 30%
+Sale
+MONITOR AUDIO GOLD 300 5G FLOORSTANDING SPEAKERS
+Regular price
+$10,399.00 
+Sale price
+$5,999.00 Save 42%
+1 2 3 … 7 
+Next
+AV RECEIVERS
+SPEAKERS
+PROJECTORS
+INTEGRATED AMPLIFIERS
+SUBWOOFER
+TRENDING PRODUCTS
+VIEW ALL
+Sale
+DENON AVC-X3800H 9.4CH 8K AV RECEIVER
+Regular price
+$2,499.00 
+Sale price
+$1,999.00 Save 20%
+Sale
+BOWERS & WILKINS PX8 LUXURY NOISE CANCELLING HEADPHONES
+Regular price
+$1,149.00 
+Sale price
+$919.00 Save 20%
+MINIDSP UMIK-1 CALIBRATION MICROPHONE USB-C
+$199.00
+Sale
+POLK ES12 SIGNATURE ELITE 12" SUBWOOFER
+Regular price
+$1,449.00 
+Sale price
+$1,014.00 Save 30%
+Sale
+POLK SIGNATURE ELITE ES20 BOOKSHELF SPEAKERS PAIR
+Regular price
+$849.00 
+Sale price
+$594.00 Save 30%
+
+## Navigation Links
+
+- [HOME](https://www.customht.com.au/)

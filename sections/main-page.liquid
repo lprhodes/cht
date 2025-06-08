@@ -1,0 +1,81 @@
+{% render 'breadcrumb' %}
+
+<div class="page-width">
+  <div class="section-header text-center">
+    <h1>{{ page.title }}</h1>
+    {% if section.settings.page_subtitle != blank %}
+      <p class="page-subtitle">{{ section.settings.page_subtitle | escape }}</p>
+    {% endif %}
+  </div>
+  
+  {% if section.settings.show_featured_image and page.image %}
+    <div class="page-image">
+      <img src="{{ page.image | img_url: '1200x600' }}" alt="{{ page.image.alt | escape }}" loading="lazy">
+    </div>
+  {% endif %}
+  
+  <div class="page-content">
+    <div class="rte">
+      {{ page.content }}
+    </div>
+    
+    {% if section.settings.show_contact_cta %}
+      <div class="page-cta">
+        <h3>{{ section.settings.cta_title | default: 'Get in Touch' }}</h3>
+        <p>{{ section.settings.cta_text | default: 'Have questions? We\'d love to hear from you.' }}</p>
+        <a href="{{ section.settings.cta_link | default: '/pages/contact' }}" class="btn">
+          {{ section.settings.cta_button_text | default: 'Contact Us' }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_subtitle",
+      "label": "Page subtitle"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_image",
+      "label": "Show featured image",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_contact_cta",
+      "label": "Show contact call-to-action",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "CTA title",
+      "default": "Get in Touch"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Have questions? We'd love to hear from you."
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA link",
+      "default": "/pages/contact"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA button text",
+      "default": "Contact Us"
+    }
+  ]
+}
+{% endschema %} 

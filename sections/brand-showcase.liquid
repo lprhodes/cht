@@ -1,0 +1,61 @@
+<div class="page-width">
+  <div class="section-header text-center">
+    <h2>{{ section.settings.title | escape }}</h2>
+  </div>
+  <div class="logo-bar">
+    {% for block in section.blocks %}
+      <div class="logo-bar__item">
+        <a href="{{ block.settings.link | default: '#' }}" class="logo-bar__link">
+          {% if block.settings.image %}
+            <img src="{{ block.settings.image | img_url: '160x160' }}" alt="{{ block.settings.image.alt | escape }}">
+          {% else %}
+            {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Our Brands"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Brand",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Showcase",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %} 
