@@ -1,0 +1,312 @@
+{% render 'breadcrumb' %}
+
+<div class="page-width">
+  <div class="section-header text-center">
+    <h1>{{ page.title }}</h1>
+    {% if section.settings.page_subtitle != blank %}
+      <p class="page-subtitle">{{ section.settings.page_subtitle | escape }}</p>
+    {% endif %}
+  </div>
+  
+  <div class="contact-page">
+    <div class="contact-content">
+      {% if page.content != blank %}
+        <div class="rte">
+          {{ page.content }}
+        </div>
+      {% endif %}
+      
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h2>{{ section.settings.form_title | default: 'Send Us a Message' }}</h2>
+          <p>{{ section.settings.form_description | default: 'Our audio experts are here to help you find the perfect solution.' }}</p>
+          
+          {% form 'contact' %}
+            {% if form.posted_successfully? %}
+              <div class="form-success">
+                <p>{{ section.settings.success_message | default: 'Thank you for contacting us. We\'ll get back to you within 24 hours.' }}</p>
+              </div>
+            {% endif %}
+            
+            {% if form.errors %}
+              <div class="form-errors">
+                <p>{{ 'contact.form.error_heading' | t }}</p>
+                <ul>
+                  {% for field in form.errors %}
+                    <li>
+                      {% if field == 'form' %}
+                        {{ form.errors.messages[field] }}
+                      {% else %}
+                        {{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+            
+            <div class="contact-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="ContactFormName">{{ 'contact.form.name' | t }} *</label>
+                  <input type="text" id="ContactFormName" name="contact[name]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" required>
+                </div>
+                <div class="form-field">
+                  <label for="ContactFormEmail">{{ 'contact.form.email' | t }} *</label>
+                  <input type="email" id="ContactFormEmail" name="contact[email]" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required>
+                </div>
+              </div>
+              
+              <div class="form-field">
+                <label for="ContactFormPhone">{{ 'contact.form.phone' | t }}</label>
+                <input type="tel" id="ContactFormPhone" name="contact[phone]" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+              </div>
+              
+              <div class="form-field">
+                <label for="ContactFormSubject">{{ section.settings.subject_label | default: 'Subject' }}</label>
+                <select id="ContactFormSubject" name="contact[subject]">
+                  <option value="">{{ section.settings.subject_placeholder | default: 'Select a topic' }}</option>
+                  <option value="Product Inquiry">Product Inquiry</option>
+                  <option value="Technical Support">Technical Support</option>
+                  <option value="Installation Services">Installation Services</option>
+                  <option value="Returns & Exchanges">Returns & Exchanges</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                </select>
+              </div>
+              
+              <div class="form-field">
+                <label for="ContactFormMessage">{{ 'contact.form.message' | t }} *</label>
+                <textarea id="ContactFormMessage" name="contact[body]" rows="6" required>{% if form.body %}{{ form.body }}{% endif %}</textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">
+                {{ section.settings.submit_button_text | default: 'Send Message' }}
+              </button>
+            </div>
+          {% endform %}
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="contact-info-wrapper">
+          <h2>{{ section.settings.info_title | default: 'Get in Touch' }}</h2>
+          
+          <div class="contact-info">
+            {% if section.settings.show_address and section.settings.address != blank %}
+              <div class="contact-item">
+                <h3>{{ section.settings.address_title | default: 'Visit Our Store' }}</h3>
+                <p>{{ section.settings.address | escape | newline_to_br }}</p>
+              </div>
+            {% endif %}
+            
+            {% if section.settings.show_phone and section.settings.phone != blank %}
+              <div class="contact-item">
+                <h3>{{ section.settings.phone_title | default: 'Call Us' }}</h3>
+                <p><a href="tel:{{ section.settings.phone | remove: ' ' | remove: '-' | remove: '(' | remove: ')' }}">{{ section.settings.phone | escape }}</a></p>
+              </div>
+            {% endif %}
+            
+            {% if section.settings.show_email and section.settings.email != blank %}
+              <div class="contact-item">
+                <h3>{{ section.settings.email_title | default: 'Email Us' }}</h3>
+                <p><a href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a></p>
+              </div>
+            {% endif %}
+            
+            {% if section.settings.show_hours and section.settings.hours != blank %}
+              <div class="contact-item">
+                <h3>{{ section.settings.hours_title | default: 'Store Hours' }}</h3>
+                <p>{{ section.settings.hours | escape | newline_to_br }}</p>
+              </div>
+            {% endif %}
+          </div>
+          
+          {% if section.settings.show_expertise %}
+            <div class="expertise-info">
+              <h3>{{ section.settings.expertise_title | default: 'Our Expertise' }}</h3>
+              <ul>
+                <li>{{ section.settings.expertise_1 | default: 'Hi-Fi Audio Systems' }}</li>
+                <li>{{ section.settings.expertise_2 | default: 'Home Theatre Installation' }}</li>
+                <li>{{ section.settings.expertise_3 | default: 'Professional Audio Consultation' }}</li>
+                <li>{{ section.settings.expertise_4 | default: 'Custom Audio Solutions' }}</li>
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contact Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_subtitle",
+      "label": "Page subtitle"
+    },
+    {
+      "type": "header",
+      "content": "Contact Form"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form title",
+      "default": "Send Us a Message"
+    },
+    {
+      "type": "textarea",
+      "id": "form_description",
+      "label": "Form description",
+      "default": "Our audio experts are here to help you find the perfect solution."
+    },
+    {
+      "type": "text",
+      "id": "subject_label",
+      "label": "Subject field label",
+      "default": "Subject"
+    },
+    {
+      "type": "text",
+      "id": "subject_placeholder",
+      "label": "Subject field placeholder",
+      "default": "Select a topic"
+    },
+    {
+      "type": "text",
+      "id": "submit_button_text",
+      "label": "Submit button text",
+      "default": "Send Message"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thank you for contacting us. We'll get back to you within 24 hours."
+    },
+    {
+      "type": "header",
+      "content": "Contact Information"
+    },
+    {
+      "type": "text",
+      "id": "info_title",
+      "label": "Contact info title",
+      "default": "Get in Touch"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_address",
+      "label": "Show address",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "address_title",
+      "label": "Address title",
+      "default": "Visit Our Store"
+    },
+    {
+      "type": "textarea",
+      "id": "address",
+      "label": "Address",
+      "info": "Store address with line breaks"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "Show phone",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "phone_title",
+      "label": "Phone title",
+      "default": "Call Us"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone number"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_email",
+      "label": "Show email",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "email_title",
+      "label": "Email title",
+      "default": "Email Us"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email address"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_hours",
+      "label": "Show store hours",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "hours_title",
+      "label": "Hours title",
+      "default": "Store Hours"
+    },
+    {
+      "type": "textarea",
+      "id": "hours",
+      "label": "Store hours",
+      "info": "Store hours with line breaks"
+    },
+    {
+      "type": "header",
+      "content": "Expertise Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_expertise",
+      "label": "Show expertise section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "expertise_title",
+      "label": "Expertise title",
+      "default": "Our Expertise"
+    },
+    {
+      "type": "text",
+      "id": "expertise_1",
+      "label": "Expertise item 1",
+      "default": "Hi-Fi Audio Systems"
+    },
+    {
+      "type": "text",
+      "id": "expertise_2",
+      "label": "Expertise item 2",
+      "default": "Home Theatre Installation"
+    },
+    {
+      "type": "text",
+      "id": "expertise_3",
+      "label": "Expertise item 3",
+      "default": "Professional Audio Consultation"
+    },
+    {
+      "type": "text",
+      "id": "expertise_4",
+      "label": "Expertise item 4",
+      "default": "Custom Audio Solutions"
+    }
+  ]
+}
+{% endschema %}
